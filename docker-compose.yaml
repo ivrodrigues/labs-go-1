@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-api
+    ports:
+      - "8080:8080"
+    environment:
+      - WEATHER_API_KEY=4b88ea5a0cd64e43a86212247251909
+      - PORT=8080
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge

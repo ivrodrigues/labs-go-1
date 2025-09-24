@@ -27,6 +27,10 @@ WORKDIR /root/
 # Copy the pre-built binary from the builder stage
 COPY --from=builder /app/main .
 
+# Set environment variables
+ENV PORT=8080
+ENV WEATHER_API_KEY=4b88ea5a0cd64e43a86212247251909
+
 # Expose port 8080 to the outside world
 EXPOSE 8080
 
